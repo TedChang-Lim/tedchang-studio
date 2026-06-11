@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ted Chang Studio | 사진·영상·미디어 프로덕션</title>
+<meta name="description" content="30년 경력 베테랑 사진작가 테드창의 사진·영상·미디어 포트폴리오 스튜디오. 제품 사진, 영상 제작, AI 미디어 교육.">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #141414;
+  --border: rgba(255,255,255,0.08);
+  --gold: #c9a84c;
+  --gold-light: #e4c76b;
+  --text: #e8e8e8;
+  --text-dim: #999;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Pretendard','Apple SD Gothic Neo',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+header {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(10,10,10,0.9); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border); padding:0 3rem; height:70px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo { font-size:1.1rem; font-weight:700; letter-spacing:-0.5px; }
+.logo span { color:var(--gold); }
+nav { display:flex; gap:2.5rem; }
+nav a { color:var(--text-dim); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; letter-spacing:1px; }
+nav a:hover { color:var(--gold); }
+
+.hero {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:8rem 2rem 5rem;
+  background:radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.04), transparent 50%);
+}
+.hero-content { max-width:700px; }
+.hero .tag { font-size:0.78rem; letter-spacing:4px; color:var(--gold); margin-bottom:1.5rem; text-transform:uppercase; }
+.hero h1 { font-size:3.5rem; font-weight:900; letter-spacing:-1px; margin-bottom:1rem; }
+.hero h1 em { font-style:normal; color:var(--gold); }
+.hero .subtitle { font-size:1.15rem; color:var(--text-dim); line-height:1.8; }
+
+section { padding:6rem 2rem; }
+.container { max-width:900px; margin:0 auto; }
+.section-title { font-size:2rem; font-weight:800; margin-bottom:2rem; letter-spacing:-0.5px; }
+.section-title span { color:var(--gold); }
+
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+.about-text { color:var(--text-dim); font-size:0.95rem; line-height:2; }
+.about-text strong { color:var(--text); }
+.timeline { list-style:none; }
+.timeline li { padding:1.2rem 0; border-bottom:1px solid var(--border); display:flex; gap:1.5rem; align-items:baseline; }
+.timeline .year { color:var(--gold); font-size:0.9rem; font-weight:600; min-width:80px; flex-shrink:0; }
+.timeline .desc { color:var(--text-dim); font-size:0.92rem; }
+
+.gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+.gallery-card {
+  aspect-ratio:1; background:var(--bg-card); border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--border); transition:all 0.3s; cursor:pointer;
+  text-decoration:none;
+}
+.gallery-card:hover { border-color:var(--gold); }
+.gallery-card .label { font-size:0.85rem; color:var(--text-dim); font-weight:600; letter-spacing:1px; }
+.gallery-card .count { font-size:0.7rem; color:var(--gold); margin-top:0.3rem; }
+
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+.contact-item { display:flex; gap:1rem; margin-bottom:1.2rem; color:var(--text-dim); font-size:0.95rem; }
+.contact-item .icon { color:var(--gold); }
+
+footer { text-align:center; padding:3rem; border-top:1px solid var(--border); color:var(--text-dim); font-size:0.85rem; }
+.btn { padding:0.85rem 2.2rem; border-radius:6px; font-weight:600; font-size:0.9rem; text-decoration:none; transition:all 0.3s; display:inline-block; }
+.btn-primary { background:var(--gold); color:#0a0a0a; }
+.btn-primary:hover { background:var(--gold-light); }
+
+@media (max-width:768px) {
+  nav { display:none; }
+  .hero h1 { font-size:2.2rem; }
+  .about-grid, .contact-grid { grid-template-columns:1fr; }
+  .gallery-grid { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>◆</span> Ted Chang Studio</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tag">Photographer & Visual Storyteller</div>
+    <h1>시간을 담는 프레임<br><em>30년의 시선</em></h1>
+    <p class="subtitle">사진·영상·미디어를 통해 당신의 가치를 증명합니다.<br>제품 사진, 인물 프로필, 영상 제작, AI 미디어 교육까지.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">About <span>the Studio</span></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><strong>테드창(Ted Chang)</strong>은 30년 경력의 베테랑 사진작가입니다. 아시아나항공 기술팀 엔지니어 출신의 과학적 시선과 예술적 감성을 결합한 독창적인 비주얼을 제작해 왔습니다.</p><br>
+        <p>2026년 5월 출간된 저서 《퍼스널 비주얼 브랜딩》은 0.1초의 첫인상을 설계하는 시각 전략을 집대성한 결과물입니다. 단편영화 〈바퀴와 바닐라〉로 반딧불영화제 최고감독상을 수상했습니다.</p><br>
+        <p>현재 경복대 AI·XR 석사과정에서 미디어와 기술의 융합을 연구하며, 원주시 학습관에서 AI 미디어 교육을 진행하고 있습니다.</p>
+      </div>
+      <ul class="timeline">
+        <li><span class="year">2026</span><span class="desc">《퍼스널 비주얼 브랜딩》 출간</span></li>
+        <li><span class="year">2025</span><span class="desc">반딧불영화제 최고감독상</span></li>
+        <li><span class="year">2022</span><span class="desc">전국생활문화축제 총괄 포토그래퍼</span></li>
+        <li><span class="year">30년</span><span class="desc">사진·영상·미디어 프리랜서</span></li>
+        <li><span class="year">'96~'99</span><span class="desc">아시아나항공 기술팀 엔지니어</span></li>
+        <li><span class="year">'91~'96</span><span class="desc">대한민국 공군 부사관</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--bg-card)">
+  <div class="container">
+    <div class="section-title">Gallery <span>Portfolio</span></div>
+    <div class="gallery-grid">
+      <a href="https://studio-nanal.blogspot.com/search/label/Beauty" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Beauty</div><div class="count">25 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/nature" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Nature</div><div class="count">18 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/Models" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Models</div><div class="count">16 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/Streets" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Streets</div><div class="count">14 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/Minimal" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Minimal</div><div class="count">5 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/Stories" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Stories</div><div class="count">5 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/advert" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Advert</div><div class="count">5 works</div></div>
+      </a>
+      <a href="https://studio-nanal.blogspot.com/search/label/Animals" class="gallery-card" target="_blank" rel="noopener">
+        <div style="text-align:center"><div class="label">Animals</div><div class="count">4 works</div></div>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:2rem;color:var(--text-dim);font-size:0.85rem">각 갤러리를 클릭하면 Blogspot에 업로드된 원본 작업물을 보실 수 있습니다.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">Contact <span>Us</span></div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item"><span class="icon">📍</span> 강원도 원주시 남원로 645 영광빌딩 5층</div>
+        <div class="contact-item"><span class="icon">📞</span> 033-762-2333</div>
+        <div class="contact-item"><span class="icon">✉️</span> anjuman1@daum.net</div>
+      </div>
+      <div>
+        <a href="https://tedchang-work.blogspot.com" class="btn btn-primary" target="_blank" rel="noopener">상세 이력 보기 →</a>
+        <p style="margin-top:1rem;color:var(--text-dim);font-size:0.85rem">출강·촬영·프로젝트 문의를 환영합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><p>© 2026 Ted Chang Studio. All rights reserved.</p></footer>
+
+</body>
+</html>
