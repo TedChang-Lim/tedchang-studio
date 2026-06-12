@@ -65,7 +65,7 @@ a{text-decoration:none;color:inherit;cursor:pointer;}
 <body>
 
 <div id="sider">
-  <h1 class="title">Ted Chang<br>Studio</h1>
+  <h1 class="title" onclick="showHome()" style="cursor:pointer;">Ted Chang<br>Studio</h1>
   <ul id="menu-v">
     <li><a href="javascript:showHome()">HOME</a></li>
     <li><a class="arrow" href="javascript:void(0)" onclick="toggleSub('work-sub')">WORK</a>
@@ -80,7 +80,7 @@ a{text-decoration:none;color:inherit;cursor:pointer;}
     </li>
     <li><a class="arrow" href="javascript:void(0)" onclick="toggleSub('about-sub')">ABOUT</a>
       <ul class="sub" id="about-sub">
-        <li><a href="javascript:showHome()">About Me</a></li>
+        <li><a href="javascript:showAbout()">About Me</a></li>
         <li><a href="javascript:showCat('Stories')">Stories</a></li>
       </ul>
     </li>
@@ -795,6 +795,52 @@ a{text-decoration:none;color:inherit;cursor:pointer;}
 </div>
 </div>
 
+
+<div id="about-page" style="display:none;">
+  <div style="max-width:800px;margin:0 auto;padding:60px 30px;color:#e0e0e0;">
+    <h2 style="font-family:'EB Garamond',Georgia,serif;font-size:42px;color:#fff;margin-bottom:30px;text-align:center;">About Me</h2>
+    
+    <div style="display:flex;gap:20px;margin-bottom:40px;flex-wrap:wrap;justify-content:center;">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqXT2_WzoRhbGouc2jhDOWTAlFcbW9q1xXs_SXZvEKuDl3HvrkfpOTI5zjrdYeO24-17MErxqvaLM9fhqL-SBKfMZM2dL1Gr1dpA7JjfLN7oXPzjjBV2hmp3Pzp8KXhKrOYDKVoBsNtxMWPWWl8KyqG1plN7uqinUfM3qt4stn3WSa-yLnPFW88jQPrc8/w400-h220/%EB%82%B4%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC.jpg" style="max-width:300px;border-radius:8px;" loading="lazy">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOgD5CoXFvZzRFCCu1h9TSeeZvqE0tX7PIG-Wr7FRrdZ3gQ77REHsG_o6yrFBXjMFG02ZvGJuzTInNRyHoELH-lrFB0fINz_CqcgzTRK4Gp4c6TRiZ7a1X8H52tMFmwSHItwqrw-CoUL9mJp8A4RfnByju0gDF0OJfvNJyRs_D7m3XcOF8eq7heY1GYZc/w300-h180/KakaoTalk_20240910_135039106_16.jpg" style="max-width:300px;border-radius:8px;" loading="lazy">
+    </div>
+
+    <div style="font-size:15px;line-height:2;margin-bottom:40px;">
+      <p style="margin-bottom:12px;"><strong>테드창 스튜디오</strong> | 033-762-2333 | anjuman1@daum.net</p>
+      <p style="margin-bottom:12px;">강원도 원주시 남원로 645 영광빌딩 5층</p>
+      <p style="margin-bottom:12px;">30년 경력 베테랑 사진작가. 항공기 엔지니어 출신이라는 이색 경력의 소유자로, 과학적 시선과 예술적 감성을 결합한 독창적인 비주얼을 제작합니다. 저서 《퍼스널 비주얼 브랜딩》(2026), 단편영화 〈바퀴와 바닐라〉 반딧불영화제 최고감독상 수상. 현재 경복대학교 대학원 AI·XR 석사과정 연구 중.</p>
+    </div>
+
+    <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:28px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:8px;margin-bottom:20px;">자잘 이력</h3>
+    <div style="font-size:13px;line-height:2;color:#aaa;margin-bottom:30px;">
+      <p>1996-1999 아시아나항공 기술팀</p>
+      <p>1999-2009 디자인 회사 바이러스헤드 운영</p>
+      <p>라이코스 아바타 제작 | 문공사·지학사·삼성출판사·대교·웅진출판·영진닷컴·교원 등 출판용 일러스트 및 사진 촬영</p>
+      <p>영화 일러스트·홍보용 사진 촬영 | 서태지 컴백 컨셉 작업 | 신승훈 콘서트 포스터 제작</p>
+      <p>극장용 애니메이션 '아치와 씨팍' 홈페이지·홍보 책자 제작</p>
+      <p>현대·기아 브랜드 이미지 책자 제작 | 포스코 소개 영상 프레젠테이션 제작</p>
+      <p>문희준·버블 시스터즈·올라이즈밴드·C9 등 앨범 작업</p>
+    </div>
+
+    <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:28px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:8px;margin-bottom:20px;">사진 교육 이력</h3>
+    <div style="font-size:13px;line-height:2;color:#aaa;margin-bottom:30px;">
+      <p>아시아나항공 사진 동호회 강의 | 서울 강서구민회관 사진 강의 | 연세세브란스 기독병원 사진 강의</p>
+      <p>올림푸스한국 교육팀 강사 | 문화체육관광부 지정 예술전문강사 (강원도 지역, 2019-2021)</p>
+      <p>중앙초·원주여중·치악중·태장중 사진 인문학 강의 | 원주문화원·영상미디어센터 미디어 교육</p>
+      <p>AKPLAZA 문화아카데미 "스마트폰으로 인생사진 남기기" | 강릉문화원 마스터 클래스</p>
+      <p>원주시 기록보존사업 '학성동 아카이브' | 전국생활문화축제 백서용 촬영</p>
+    </div>
+
+    <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:28px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:8px;margin-bottom:20px;">사진 전시 & 미디어</h3>
+    <div style="font-size:13px;line-height:2;color:#aaa;margin-bottom:30px;">
+      <p>예술의 전당 V갤러리 전시 | 평택포토페어 초대작가 | 반곡역 갤러리 영구 전시</p>
+      <p>여행잡지 '트래비'·'런시티 매거진' 포토그래퍼 | MBC 다큐 '나는 산다' 출연</p>
+      <p>강릉문화원 웹진 '예술가와' 사진·글 기고 | 월간항공 사진 기고</p>
+      <p>국제걷기대회·괌 마라톤 공식 사진가 | 프로젝트 "One man"·"영화처럼" 진행</p>
+    </div>
+  </div>
+</div>
+
 <div id="contact-section">
   <h2>Contact</h2>
   <p>anjuman1@daum.net</p>
@@ -815,9 +861,9 @@ a{text-decoration:none;color:inherit;cursor:pointer;}
 
 <script>
 function toggleSub(id){document.getElementById(id).style.display=document.getElementById(id).style.display==='block'?'none':'block';}
-function showHome(){document.getElementById('home-page').style.display='block';document.getElementById('contact-section').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});}
-function showCat(cat){document.getElementById('home-page').style.display='none';document.getElementById('contact-section').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});var el=document.getElementById('cat-'+cat);if(el){el.style.display='block';el.scrollIntoView({behavior:'smooth'});}}
-function showContact(){document.getElementById('home-page').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});document.getElementById('contact-section').style.display='block';}
+function showHome(){document.getElementById('home-page').style.display='block';document.getElementById('contact-section').style.display='none';document.getElementById('about-page').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});}
+function showCat(cat){document.getElementById('home-page').style.display='none';document.getElementById('contact-section').style.display='none';document.getElementById('about-page').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});var el=document.getElementById('cat-'+cat);if(el){el.style.display='block';el.scrollIntoView({behavior:'smooth'});}}
+function showAbout(){document.getElementById('home-page').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});document.getElementById('contact-section').style.display='none';document.getElementById('about-page').style.display='none';document.getElementById('about-page').style.display='block';}function showContact(){document.getElementById('home-page').style.display='none';document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});document.getElementById('contact-section').style.display='block';}
 document.addEventListener('DOMContentLoaded',function(){document.getElementById('main-content').addEventListener('click',function(e){var a=e.target.closest('.post-img-link');if(!a)return;e.preventDefault();var img=a.getAttribute('data-img');var title=a.getAttribute('data-title');var body=a.getAttribute('data-body');document.getElementById('lb-img').src=img;document.getElementById('lb-title').textContent=title;document.getElementById('lb-body').textContent=body;document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';});});
 function closeLightbox(ev){if(ev&&ev.target!==document.getElementById('lightbox')&&ev.target.className!=='lb-close')return;document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
 </script>
