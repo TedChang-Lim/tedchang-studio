@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ted Chang Studio</title>
+<meta name="description" content="30년 경력 베테랑 사진작가 테드창의 사진·영상·미디어 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@300;400;500&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { height:100%; }
+body {
+  font-family:'Noto Sans KR',sans-serif;
+  min-height:100vh;
+  background:#2c2c2c;
+  display:flex;
+  color:#ccc;
+}
+a { text-decoration:none; color:inherit; cursor:pointer; }
+
+/* SIDEBAR */
+#sider {
+  width:283px; min-width:283px;
+  background:#383838;
+  color:#fff;
+  display:flex; flex-direction:column;
+  align-items:center;
+  padding:50px 0 30px;
+  position:fixed; top:0; left:0; bottom:0;
+  z-index:10;
+  overflow-y:auto;
+}
+#sider .title {
+  font-family:'Dancing Script',cursive;
+  font-size:42px; font-weight:700;
+  text-align:center; margin-bottom:35px;
+  line-height:1.15;
+}
+#menu-v {
+  list-style:none; text-align:center; width:180px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13px; font-weight:400; letter-spacing:4px;
+}
+#menu-v > li { 
+  border-top:1px solid rgba(255,255,255,0.15); 
+  padding:13px 0;
+}
+#menu-v > li:last-child { border-bottom:1px solid rgba(255,255,255,0.15); }
+#menu-v .arrow:after { content:" ▸"; font-size:9px; }
+.sub {
+  list-style:none; display:none;
+  font-size:11px; letter-spacing:1px; margin-top:6px;
+}
+.sub li { padding:4px 0; }
+.sub li a { opacity:0.65; transition:opacity 0.2s; }
+.sub li a:hover { opacity:1; }
+
+.instawrap { margin-top:35px; text-align:center; }
+.instawrap h2 {
+  font-size:11px; letter-spacing:4px; font-weight:400;
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,0.35);
+  display:inline-block; padding-bottom:3px;
+}
+.instawrap iframe { border:none; overflow:hidden; width:201px; height:67px; }
+
+#sider .footer { margin-top:auto; font-size:10px; opacity:0.45; letter-spacing:1px; }
+
+/* MAIN */
+#main-content {
+  margin-left:283px; flex:1;
+  min-height:100vh;
+}
+
+/* HOME: Category grid */
+.cat-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  padding:2px;
+}
+.cat-card {
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background-size:cover; background-position:center;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+}
+.cat-card:before {
+  content:''; position:absolute; inset:0;
+  background:rgba(0,0,0,0.3);
+  transition:background 0.4s;
+}
+.cat-card:hover:before { background:rgba(0,0,0,0.55); }
+.cat-card .cat-name {
+  position:relative; z-index:1;
+  font-family:'Dancing Script',cursive;
+  font-size:40px; color:#fff;
+  text-shadow:1px 1px 8px rgba(0,0,0,0.6);
+}
+.cat-card .cat-count {
+  position:relative; z-index:1;
+  font-family:'Playfair Display',serif;
+  font-size:18px; color:rgba(255,255,255,0.8);
+  text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+  margin-top:4px;
+}
+
+/* CATEGORY PAGE */
+.cat-page {
+  display:none;
+  padding:2px;
+}
+.cat-page .back-link {
+  display:inline-block; padding:12px 24px; margin:10px;
+  color:rgba(255,255,255,0.6); font-size:12px; letter-spacing:3px;
+  transition:color 0.2s;
+}
+.cat-page .back-link:hover { color:#fff; }
+.cat-page-header {
+  text-align:center; padding:40px 20px 25px; color:#fff;
+}
+.cat-page-header h2 {
+  font-family:'Dancing Script',cursive;
+  font-size:52px;
+  text-shadow:1px 1px 6px rgba(0,0,0,0.4);
+}
+.cat-page-header p {
+  font-family:'Playfair Display',serif;
+  font-size:22px; opacity:0.7; margin-top:4px;
+}
+
+/* POST GRID */
+.post-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2px;
+  padding:0 2px 2px;
+}
+.post-card {
+  background:#222;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.post-img-link {
+  display:block; aspect-ratio:4/3; overflow:hidden;
+}
+.post-img-link img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 0.4s;
+}
+.post-img-link:hover img { transform:scale(1.04); }
+.post-text {
+  padding:16px 18px;
+}
+.post-text h3 {
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px; font-weight:500; color:#f0f0f0;
+  line-height:1.4; margin-bottom:8px;
+}
+.post-text p {
+  font-size:13px; line-height:1.7; color:#999;
+  max-height:90px; overflow:hidden;
+}
+
+/* Contact */
+#contact-section {
+  display:none; text-align:center; padding:100px 20px; color:#fff;
+}
+#contact-section h2 {
+  font-family:'Dancing Script',cursive; font-size:48px; margin-bottom:25px;
+}
+#contact-section p { font-size:16px; opacity:0.75; margin-bottom:8px; }
+
+@media (max-width:768px) {
+  #sider { width:180px; min-width:180px; padding:30px 0 20px; }
+  #sider .title { font-size:32px; }
+  #main-content { margin-left:180px; }
+  .cat-grid { grid-template-columns:repeat(2,1fr); }
+  .cat-grid .cat-name { font-size:28px; }
+  .post-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div id="sider">
+  <h1 class="title">Ted Chang<br>Studio</h1>
+  <ul id="menu-v">
+    <li><a href="javascript:showHome()">HOME</a></li>
+    <li><a class="arrow" href="javascript:void(0)" onclick="toggleSub('work-sub')">WORK</a>
+      <ul class="sub" id="work-sub">
+        <li><a href="javascript:showCat('nature')">Nature_자연</a></li>
+        <li><a href="javascript:showCat('Models')">Models_모델</a></li>
+        <li><a href="javascript:showCat('Animals')">Animals_동물</a></li>
+        <li><a href="javascript:showCat('Beauty')">Beauty_예쁜</a></li>
+        <li><a href="javascript:showCat('Streets')">Streets_거리</a></li>
+        <li><a href="javascript:showCat('Minimal')">Minimal_미니멀</a></li>
+      </ul>
+    </li>
+    <li><a class="arrow" href="javascript:void(0)" onclick="toggleSub('about-sub')">ABOUT</a>
+      <ul class="sub" id="about-sub">
+        <li><a href="javascript:showHome()">About Me</a></li>
+        <li><a href="javascript:showCat('Stories')">Stories</a></li>
+      </ul>
+    </li>
+    <li><a href="javascript:showContact()">CONTACT</a></li>
+  </ul>
+  <div class="instawrap">
+    <h2>INSTAGRAM</h2>
+    <iframe src="https://snapwidget.com/embed/1077080" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <div class="footer">Ted Chang Studio &copy; all rights reserved</div>
+</div>
+
+<!-- MAIN -->
+<div id="main-content">
+
+<!-- HOME PAGE -->
+<div id="home-page">
+  <div class="cat-grid">
+    <a href="javascript:showCat('Animals')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinzJ5GakBjzkchv_19F4AU13bwUl3k9kxkceJtTThGWOHEY2vUcPadSqDVYZvG7FOeq1SLdoahvcV46Uh139-5WaZ5EtdVDOGOB9ppAEqXx1RsvvDNp1p-xxyYcIQPXZLGBlggNsimsHPUcMVlC5XSDheezzrz8ILSQ8O-kx1MD6WdpkiJyQU-JLSVD6Y/w600-h400/sns_DSC_8746_1.jpg)">
+      <span class="cat-name">Animals</span><span class="cat-count">(4)</span>
+    </a>
+    <a href="javascript:showCat('Beauty')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeDRLDG1xb9mfZYJQTvZGnaY7ffDxbxuHexkLZ_MBCbYV2hlnp835at6vSUkdIHb3q9j1hI2lN6DzGDPe-BA3_ZEQDCbo-77TV4wfuLwjoF58PoP8WIrz6TYY74FMEKCxOWknY0pC5WS-czJzvuruytN9HgPecF9kSLd1WiHg8qzaVFMN-SMh5xVxmvoc/s600/1524076639060.jpg)">
+      <span class="cat-name">Beauty</span><span class="cat-count">(18)</span>
+    </a>
+    <a href="javascript:showCat('Minimal')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxcRjqsgljeB2P9g3wM11139GubeOTrkzi6G6QNgW4VskZyYM4aSHEREqoc4hKX5gxei3j26Dr7iPZaitpkOImzlE7SeXg30MTyV-mo55hyphenhyphengmr9VGjiOsO2lmEp84tdvvEp9AyqKynIOLCROiDetUocbqanZ3RxBk01AsDY8a6qhJ3LDkMUUQn1aqYkxc/w600-h400/DSC02536.jpg)">
+      <span class="cat-name">Minimal</span><span class="cat-count">(1)</span>
+    </a>
+    <a href="javascript:showCat('Models')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAW4MnzOB4MfOUDyZIeTzC9UkNUxMvu9iz04EDJ3DEdYhlabXRoW9UopNkWivHMuiOQjTlIwJAR0W8sKaEAkSlArKSJb3grMROuYSHNhH6GjTI0NxWpJAfvxjoaLlXyRJ1vRrbMEEKlmA2L9EIYg2GrAb0iQvHG35sgkIhjxB_MgkTVV492AJQ1-6V1JA/s600/1555806245918.jpg)">
+      <span class="cat-name">Models</span><span class="cat-count">(3)</span>
+    </a>
+    <a href="javascript:showCat('Stories')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgW0416-XD8WgokCzDED6LT2c8vcm90UtxaNhIMS3RivvzxLTUwvZ2X_lI6PpvFBFOmaotS2fKxkd-QzjTPX2hVL0Gj3G8GRkmoV4QZEqCVPsiaHyCY8vSS4pOPJZOR7L87ytX7qJlG_vco7iTGI7NzkbPrIdf3MtRJiv4-rvVGX_2XVniPgqmH9RrB2H0/w428-h640/KakaoTalk_20240502_222702761_09.jpg)">
+      <span class="cat-name">Stories</span><span class="cat-count">(2)</span>
+    </a>
+    <a href="javascript:showCat('advert')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKPr66g5rDNY0pRwWj6IsWRgGx1hkMnDnsvRECaT6I4SZ7IKZG8gXbpAXQim9mPvnxiYiE8S0khvDJ_qzgS_MYCtMAivw8wNSE1zFhsoMkfFFGGPVQwc2PUoia_c6TwnNe8gVQ9l-N272tY7ifegQwBIMNa5l9AMsaprJuloU2UeDXESwVH2rs6wr8epI/s600/089089.jpg)">
+      <span class="cat-name">Advert</span><span class="cat-count">(5)</span>
+    </a>
+    <a href="javascript:showCat('Uncategorized')" class="cat-card" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUMELTD3K-seYRKp7FFySUeWSrb7lBh-y0n5bjOWzAQpGPBqJ4x0hKm5jC6spxwZ_2WX-KXZOQjtxWL_5PGBI5P-lK6jQpqI13DHA0NzwWNtTEv1GJkk3V53EqlYGFWYzASxMo-0N9cHX8l5kq5AAwsPR80OU8b7wIJAB-JuY8bQ1TTH-6HptbhcNy_6A/s600/default.jpg)">
+      <span class="cat-name">More</span><span class="cat-count">(4)</span>
+    </a>
+  </div>
+</div>
+
+<!-- CATEGORY PAGES -->
+<!-- CONTENT_REPLACE -->
+
+<!-- CONTACT -->
+<div id="contact-section">
+  <h2>Contact</h2>
+  <p>anjuman1@daum.net</p>
+  <p>033-762-2333</p>
+  <p>강원도 원주시 남원로 645 영광빌딩 5층</p>
+</div>
+
+</div>
+
+<script>
+function toggleSub(id) {
+  var s = document.getElementById(id);
+  s.style.display = s.style.display==='block' ? 'none' : 'block';
+}
+function showHome() {
+  document.getElementById('home-page').style.display='block';
+  document.getElementById('contact-section').style.display='none';
+  document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});
+}
+function showCat(cat) {
+  document.getElementById('home-page').style.display='none';
+  document.getElementById('contact-section').style.display='none';
+  document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});
+  var page = document.getElementById('cat-'+cat);
+  if (page) { page.style.display='block'; page.scrollIntoView({behavior:'smooth'}); }
+}
+function showContact() {
+  document.getElementById('home-page').style.display='none';
+  document.querySelectorAll('.cat-page').forEach(function(p){p.style.display='none';});
+  document.getElementById('contact-section').style.display='block';
+}
+</script>
+
+</body>
+</html>
